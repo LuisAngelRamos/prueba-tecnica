@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import { Component1Page } from "./pages/Component1Page";
+import { Component2Page } from "./pages/Component2Page";
+import { useContext } from "react";
+import Context from "./Context";
+import "./App.css";
 
 function App() {
+  const { elementos } = useContext(Context.Context);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="buttons">
+      <div>
+        <Component1Page />
+        <Component2Page />
+      </div>
+      <pre>{JSON.stringify(elementos, null, 2)}</pre>
     </div>
   );
 }
